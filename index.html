@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bateria de Testes Cognitivos</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav id="nav">
+    <button data-s="inicio" class="active">INÍCIO</button>
+    <button data-s="reacao">REAÇÃO</button>
+    <button data-s="memoria">MEMÓRIA</button>
+    <button data-s="atencao">ATENÇÃO</button>
+    <button data-s="numero">NÚMERO</button>
+    <button data-s="motora">MOTORA</button>
+    <button data-s="resultados">RESULTADOS</button>
+  </nav>
+</header>
+
+<main>
+  <section class="section show" id="inicio">
+    <div class="box">
+      <h1>INSIRA SEU NOME DE IDENTIFICAÇÃO</h1>
+      <p class="hint">EX: AA00BB</p>
+      <p class="hint" id="idMsg" style="color:var(--dim)">PRESSIONE ENTER PARA CONTINUAR</p>
+      <input type="text" id="pid" placeholder="">
+      
+    </div>
+  </section>
+
+  <section class="section" id="reacao">
+    <div class="box">
+      <h1>TESTE DE REAÇÃO</h1>
+      <p class="hint">Pressione ESPAÇO para começar. Depois, pressione ESPAÇO assim que o quadro ficar branco. 3 tentativas.</p>
+      <div class="stage" id="reacaoStage">Pressione ESPAÇO</div>
+    </div>
+  </section>
+
+  <section class="section" id="memoria">
+    <div class="box">
+      <h1>TESTE DE MEMÓRIA</h1>
+      <p class="hint">Memorize a sequência de números e digite-a depois.</p>
+      <div class="stage" id="memoriaStage">Pressione ESPAÇO</div>
+      <input type="text" id="memoriaInput" style="display:none" placeholder="Digite a sequência">
+      <br><button class="go" id="memoriaStart">INICIAR</button>
+    </div>
+  </section>
+
+  <section class="section" id="atencao">
+    <div class="box">
+      <h1>TESTE DE ATENÇÃO</h1>
+      <p class="hint">Clique na COR da fonte da palavra, não na palavra em si. 8 rodadas.</p>
+      <div class="stage" id="atencaoStage">Pressione ESPAÇO</div>
+      <div id="atencaoBtns" style="display:none; display:flex; gap:10px; justify-content:center; margin-top:10px;"></div>
+      <button class="go" id="atencaoStart">INICIAR</button>
+    </div>
+  </section>
+
+  <section class="section" id="numero">
+    <div class="box">
+      <h1>TESTE DE NÚMERO</h1>
+      <p class="hint">Escolha a resposta certa. 5 contas.</p>
+      <div class="stage" id="numeroStage">Pressione ESPAÇO</div>
+      <div id="numeroBtns" style="display:none; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:10px;"></div>
+      <button class="go" id="numeroStart">INICIAR</button>
+    </div>
+  </section>
+
+  <section class="section" id="motora">
+    <div class="box">
+      <h1>TESTE MOTORA</h1>
+      <p class="hint">Clique nos 8 alvos assim que aparecerem, o mais rápido possível.</p>
+      <div class="stage" id="motoraStage" style="height:220px;">Pressione ESPAÇO</div>
+      <button class="go" id="motoraStart">INICIAR</button>
+    </div>
+  </section>
+
+  <section class="section wide" id="resultados">
+    <div class="box">
+      <h1>RESULTADOS</h1>
+      <div id="resMe"></div>
+      <h2>PLACAR</h2>
+      <table id="resTable"></table>
+      <p class="hint">Nota final = média das 5 pontuações (0 a 100). Só entra no ranking quem fez os 5 testes.</p>
+      <button class="go" id="newBtn">NOVO PARTICIPANTE</button>
+      <button class="go" id="clearBtn" style="background:#e04040;">APAGAR TUDO</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>ESCOLA ESTADUAL PRUDENTE DE MORAIS</span>
+  <span class="dots"></span>
+  <span>2° ANO (ENSINO MÉDIO)</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
